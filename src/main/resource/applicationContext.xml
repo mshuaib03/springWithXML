@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:aop="http://www.springframework.org/schema/aop"   
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans.xsd   
+       http://www.springframework.org/schema/aop   
+       http://www.springframework.org/schema/aop/spring-aop.xsd">  
+ <aop:aspectj-autoproxy />  
+ 	<bean id="studentbean" class="com.springpractice.springWithXML.Student"
+		lazy-init="false" init-method="initIt" destroy-method="cleanUp">
+		  <property name="Id" value="1"></property> 
+		  <property name="name" value="Vimal Jaiswal"></property>
+
+		<!-- <constructor-arg type="String" value="hhjj"/>  -->
+		<!-- <constructor-arg type="String" value="Vimal Jaiswal"/> --> 
+	</bean>
+
+	<!-- <property name="Id" value="1"></property> <property name="name" value="Vimal 
+		Jaiswal"></property> -->
+
+	<bean class="com.springpractice.springWithXML.BeanPrePostProcessor" />
+	<bean name="AopDemo" class="com.springpractice.springWithXML.AopDemo" />
+
+</beans> 
